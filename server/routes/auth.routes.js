@@ -9,17 +9,17 @@ const User = require("../models/user.model");
 
 /* SIGNUP ROUTE */
 router.post("/signup", (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, premium } = req.body;
 
   if (!username || !password) {
     res.status(400).json({ message: "Provide username and password" });
     return;
   }
 
-  if (password.length < 7) {
+  if (password.length < 5) {
     res.status(400).json({
       message:
-        "Please make your password at least 8 characters long for security purposes.",
+        "Please make your password at least 6 characters long for security purposes.",
     });
     return;
   }
@@ -47,7 +47,7 @@ router.post("/signup", (req, res) => {
     const aNewUser = new User({
       username: username,
       password: hashPass,
-      premium: false,
+      premium: premium,
     });
 
     // Attempt to save the new user to the database
