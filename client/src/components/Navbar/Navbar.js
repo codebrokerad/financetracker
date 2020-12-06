@@ -32,7 +32,7 @@ const Navbar = (props) => {
         <ul>
           <li>
             <Link to="/stocks" style={{ textDecoration: "none" }}>
-              Projects
+              Stocks
             </Link>
           </li>
           <li>

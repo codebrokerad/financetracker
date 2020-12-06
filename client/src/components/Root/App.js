@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import Signup from "../Auth/Signup";
 import Login from "../Auth/Login";
 import ProtectedRoute from "../Auth/ProtectedRoute";
+import Dashboard from "../Stocks/Dashboard";
 
 import Navbar from "../Navbar/Navbar";
 import AuthService from "../../services/auth-service";
@@ -43,7 +44,7 @@ function App() {
         <ProtectedRoute
           user={loggedInUser}
           path="/stocks"
-          component=""
+          component={Dashboard}
         />
       </Switch>
     </section>
@@ -64,8 +65,8 @@ function App() {
         />
         <ProtectedRoute
           user={loggedInUser}
-          path="/projects"
-          component=""
+          path="/stocks"
+          component={Dashboard}
         />
       </Switch>
     </section>

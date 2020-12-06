@@ -47,6 +47,7 @@ router.post("/signup", (req, res) => {
     const aNewUser = new User({
       username: username,
       password: hashPass,
+      premium: false,
     });
 
     // Attempt to save the new user to the database

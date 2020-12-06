@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import AuthService from "../../services/auth-service";
+//import Checkbox from './Checkbox'
 
-const initialState = { username: "", password: "" };
+const initialState = {
+  username: "",
+  password: "",
+  premium: { checked: false },
+};
 
 const Signup = (props) => {
   const [regForm, setRegForm] = useState(initialState);
@@ -14,11 +19,11 @@ const Signup = (props) => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const { username, password } = regForm;
+    const { username, password, premium } = regForm;
 
     // Use the service.signup method to make a call to the back end and sign the user up
     service
-      .signup(username, password)
+      .signup(username, password, premium)
       .then((response) => {
         setRegForm(initialState);
         props.getUser(response);
@@ -34,6 +39,7 @@ const Signup = (props) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setRegForm({ ...regForm, [name]: value });
+    // this.premium({ checked: event.target.checked });
   };
 
   return (
@@ -55,7 +61,13 @@ const Signup = (props) => {
           value={regForm.password}
           onChange={handleChange}
         />
-
+        {/* <label>
+          <Checkbox
+            checked={regForm.premium.checked}
+            onChange={handleChange}
+          />
+          <span>Premium User</span>
+        </label> */}
         <input type="submit" value="Signup" />
       </form>
       <br />
