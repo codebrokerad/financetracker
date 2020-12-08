@@ -1,51 +1,65 @@
 import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
 
 const Home = () => {
   return (
     <div className="background">
-      <div>
-        <Carousel fade={false}>
+      <div className="container">
+        <Carousel>
           <Carousel.Item>
-            <img
-              className="d-block w-1100"
-              src="https://i.imgur.com/9A9XjeR.jpeg/800x400?"
-              alt="First slide"
-            />
+            <div className="item">
+              <img
+                className="d-block"
+                src="https://i.imgur.com/9A9XjeR.jpeg/"
+                alt="First slide"
+              />
+            </div>
             <Carousel.Caption>
-              <h3>Finance 2021</h3>
-              <p>A portal to follow stock prices.</p>
+              <div>
+                <h3 className="carousel-header">FINANCE 2021</h3>
+                <p1 className="carousel-text">
+                  A portal to follow stock prices
+                </p1>
+              </div>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img
-              className="d-block w-1100"
-              src="https://i.imgur.com/ErRlqf7.jpeg/800x400?"
-              alt="Third slide"
-            />
-
+            <div className="item">
+              <img
+                className="d-block"
+                src="https://i.imgur.com/ErRlqf7.jpeg/"
+                alt="Third slide"
+              />
+            </div>
             <Carousel.Caption>
-              <h3>Make wiser investments</h3>
-              <p>Analyze and choose top stocks to invest.</p>
+              <div>
+                <h3 className="carousel-header">INVEST WISER</h3>
+                <p1 className="carousel-text">
+                  Choose from top stocks to invest
+                </p1>
+              </div>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img
-              className="d-block w-1100"
-              src="https://i.imgur.com/S4TmZi2.jpeg/800x400?"
-              alt="Third slide"
-            />
-
+            <div className="item">
+              <img
+                className="d-block"
+                src="https://i.imgur.com/S4TmZi2.jpeg/"
+                alt="Third slide"
+              />
+            </div>
             <Carousel.Caption>
-              <h3>Real time market</h3>
-              <p>You can track latest prices if you create an account.</p>
+              <div>
+                <h3 className="carousel-header">REAL TIME MARKETS</h3>
+                <p1 className="carousel-text">
+                  Track stocks live by creating an account
+                </p1>
+              </div>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        <Button variant="primary">Primary</Button>{" "}
       </div>
     </div>
   );

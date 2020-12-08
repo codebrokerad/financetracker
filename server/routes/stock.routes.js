@@ -7,7 +7,7 @@ const Stock = require("../models/stock.model");
 
 const stock_api_key = process.env.STOCK_API_KEY;
 
-router.get("/stocks/:symbol", async (req, res) => {
+router.get("/saveStocks/:symbol", async (req, res) => {
   const { symbol } =req.params;
   const fetch_response = await fetch(
     `https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${stock_api_key}`
@@ -30,4 +30,14 @@ router.get("/stocks/:symbol", async (req, res) => {
   res.json(data);
 });
 
+/* GET - retrieves all the stocks from the database */
+router.get("/stocks", (req, res) => {
+  Stock.find()
+    .then((allTheStocks) => {
+      res.status(200).json(allTheStocks);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
 module.exports = router;

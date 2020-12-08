@@ -1,3 +1,17 @@
-.background {
-    background-color: aliceblue;
+.carousel-header {
+    font-family: Verdana;
+    color: rgba(6, 138, 83, 0.507);
+    font-size: 80px;
+    font-weight: bold;
+    background-color:rgba(221, 233, 221, 0.897);
 }
+
+.carousel-text {
+    font-family: 'Arial Narrow';
+color: #6840c58f;
+font-size: 50px;
+font-weight: bold;
+font-style: italic;
+background-color:rgba(221, 233, 221, 0.897);
+}
+

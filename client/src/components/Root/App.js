@@ -49,6 +49,13 @@ function App() {
           component={Dashboard}
         />
       </Switch>
+      {/* <Switch>
+        <ProtectedRoute
+          user={loggedInUser}
+          path="/premium"
+          component={PremiumStocks}
+        />
+      </Switch>*/}
     </section>
   ) : (
     <section className="App">
