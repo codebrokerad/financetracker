@@ -49,7 +49,7 @@ const Navbar = (props) => {
         <nav className="nav-style">
           <ul>
             <li>
-              <Link to="/" style={{ textDecoration: "none" }}>
+              <Link to="/login" style={{ textDecoration: "none" }}>
                 Login
               </Link>
             </li>

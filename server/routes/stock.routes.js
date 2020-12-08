@@ -5,9 +5,12 @@ const fetch = require("node-fetch");
 // require the stock model !!!!
 const Stock = require("../models/stock.model");
 
-router.get("/stocks", async (req, res) => {
+const stock_api_key = process.env.STOCK_API_KEY;
+
+router.get("/stocks/:symbol", async (req, res) => {
+  const { symbol } =req.params;
   const fetch_response = await fetch(
-    `https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=d228380d373feb4f78ddd08fa620a8bd`
+    `https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${stock_api_key}`
   );
   const data = await fetch_response.json();
 

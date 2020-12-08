@@ -5,14 +5,14 @@ const StocksLoaderStatus = props => {
     return (
       <div className='is-medium'>
         <span className='has-text-danger' >Server sent no data. Probably the market is closed at the moment. </span>
-        <br />(Come back later? :-))
+        <br />(Come back later))
       </div>
     );
   } else {
     return (
       <div className='tag is-large is-success'>
         <span className='loader'> &nbsp;</span>
-        &nbsp; &nbsp; Fetching some stocks...
+        &nbsp; &nbsp; Fetching some stocks. Please Wait.
       </div>
     );
   }

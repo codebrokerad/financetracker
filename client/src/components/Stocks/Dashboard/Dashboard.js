@@ -1,7 +1,8 @@
 import React from 'react'
-import StocksList from "./StocksList.js";
-import StocksGraph from "./StocksGraph.js";
-import StocksLoaderStatus from "./StocksLoaderStatus.js";
+import StocksList from "../StocksList/StocksList.js";
+import StocksGraph from "../StocksGraph/StocksGraph.js";
+import StocksLoaderStatus from "../StocksLoaderStatus/StocksLoaderStatus.js";
+import "./Dashboard.css";
 
 const stocksUrl = 'ws://stocks.mnet.website/';
 

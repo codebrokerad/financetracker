@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Switch, Route } from "react-router-dom";
 
 import Signup from "../Auth/Signup";
 import Login from "../Auth/Login";
 import ProtectedRoute from "../Auth/ProtectedRoute";
-import Dashboard from "../Stocks/Dashboard";
+import Dashboard from "../Stocks/Dashboard/Dashboard";
 
+import Home from "../Home/Home";
 import Navbar from "../Navbar/Navbar";
 import AuthService from "../../services/auth-service";
 
@@ -53,6 +55,7 @@ function App() {
       <Navbar userInSession={loggedInUser} getUser={getLoggedInUser} />
 
       <Switch>
+        <Route exact path="/" component={Home} />
         <Route
           exact
           path="/signup"
@@ -60,7 +63,7 @@ function App() {
         />
         <Route
           exact
-          path="/"
+          path="/login"
           render={() => <Login getUser={getLoggedInUser} />}
         />
         <ProtectedRoute

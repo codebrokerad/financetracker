@@ -1,7 +1,7 @@
 import React from 'react'
 import { Detector } from "react-detect-offline";
-import StockRow from './StockRow.js'
-import MarketTrendArrow from './MarketTrendArrow.js'
+import StockRow from '../StockRow/StockRow.js'
+import MarketTrendArrow from '../MarketTrendArrow/MarketTrendArrow.js'
 
 const StocksList = (props) => {
   return (
