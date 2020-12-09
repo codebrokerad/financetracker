@@ -10,9 +10,14 @@ class StockService {
   }
 
   // GetAllStock
-  getStocks = async () => {
-    const response = await this.service.get("http://localhost:5001/api/stocks");
-    return response.data;
+  //getStocks = async () => {
+  //  const response = await this.service.get("http://localhost:5001/api/stocks");
+  //  return response.data;
+  //};
+  getStocks = () => {
+    return this.service
+      .get("http://localhost:5001/api/stocks")
+      .then((response) => response);
   };
 
   // Save Stock by Symbol

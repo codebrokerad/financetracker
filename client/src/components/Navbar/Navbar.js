@@ -4,15 +4,15 @@ import "./Navbar.css";
 
 import AuthService from "../../services/auth-service";
 
-const Navbar = (props) => {
-  const [loggedInUser, setLoggedInUser] = useState(null);
+const Navbar = ({ userInSession, getUser }) => {
+  const [loggedInUser, setLoggedInUser] = useState(userInSession);
 
   const service = new AuthService();
 
   // Mimic lifecycle method when a component updates
   useEffect(() => {
-    setLoggedInUser(props.userInSession);
-  }, [props.userInSession]);
+    setLoggedInUser(userInSession);
+  }, [userInSession]);
 
   // function to log user out
   const logoutUser = () => {
@@ -21,7 +21,7 @@ const Navbar = (props) => {
       setLoggedInUser(null);
 
       // reset getUser value
-      props.getUser(null);
+      getUser(null);
     });
   };
 
@@ -30,6 +30,13 @@ const Navbar = (props) => {
       <nav className="nav-style-loggedin">
         <span>Welcome, {loggedInUser.username}</span>
         <ul>
+          {loggedInUser && loggedInUser.premium ? (
+            <li>
+              <Link to="/premium" style={{ textDecoration: "none" }}>
+                Premium
+              </Link>
+            </li>
+          ) : null}
           <li>
             <Link to="/stocks" style={{ textDecoration: "none" }}>
               Stocks

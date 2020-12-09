@@ -20,6 +20,7 @@ const Login = (props) => {
     service
       .login(username, password)
       .then((response) => {
+
         setLoginState(initialState);
         props.getUser(response);
       })
