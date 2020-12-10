@@ -29,7 +29,7 @@ class AuthService {
 
   logout = () => {
     return this.service
-      .post("http://localhost:5001/api/logout", {})
+      .post("/api/logout", {})
       .then((response) => response.data);
   };
 }
