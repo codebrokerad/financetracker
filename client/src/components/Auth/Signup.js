@@ -71,7 +71,7 @@ const Signup = (props) => {
             onChange={onChange}
             disabled={premium.disabled}
           />
-          &nbsp; Double Click to Activate Premium Feature
+          &nbsp; Double Click Checkbox to Activate Premium Feature
         </label>
         <input type="submit" value="Signup" />
       </form>
