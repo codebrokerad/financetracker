@@ -1,6 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 .App {
   text-align: center;
-  font-family: sansation;
+font-family: 'Josefin Sans', sans-serif;
+background-color: #ebebeb;
+height: 100vh;
+
 }
 
 .App-logo {

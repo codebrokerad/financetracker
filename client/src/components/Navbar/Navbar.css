@@ -1,8 +1,8 @@
 .nav-style,
 .nav-style-loggedin {
-  background-color:grey;
+  background-color: #fbfbfb;
   padding: 10px;
-  color: #fff;
+  color: #525151;
 }
 
 .nav-style > ul,
@@ -12,15 +12,20 @@
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
+  margin-top: 1rem;
 }
 
 .nav-style > ul > li > a,
 .nav-style-loggedin > ul > li > a {
   margin: 5px;
-  border: 2px solid white;
-  padding: 10px;
-  color: #fff;
-  width: 25%;
+  border: 2px solid #525151;
+  padding: 10px 40px;
+  color: #584b4b;
+  text-transform: uppercase !important;
+  letter-spacing: 1px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .nav-style > ul > li > a:hover {

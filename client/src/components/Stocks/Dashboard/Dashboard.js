@@ -4,7 +4,7 @@ import StocksGraph from "../StocksGraph/StocksGraph.js";
 import StocksLoaderStatus from "../StocksLoaderStatus/StocksLoaderStatus.js";
 import "./Dashboard.css";
 
-const stocksUrl = 'ws://stocks.mnet.website/';
+const stocksUrl = 'wss://stocks.mnet.website/';
 
 class Dashboard extends React.Component {
 
