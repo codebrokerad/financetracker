@@ -13,6 +13,7 @@ import Navbar from "../Navbar/Navbar";
 import AuthService from "../../services/auth-service";
 import StockService from "../../services/stock-service";
 
+
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
@@ -20,7 +21,6 @@ function App() {
   React.useEffect(() => {
     fetchUser();
   }, []);
-  // Function to help fetch a logged in user
   const fetchUser = () => {
     if (loggedInUser === null) {
       service
@@ -36,20 +36,37 @@ function App() {
   };
   React.useEffect(() => {
     const stockService = new StockService();
-    setInterval(() => {
+ 
+    let array = [
+      "BNTX",
+      "MRNA",
+      "OZON",
+      "DAO",
+      "TWOU",
+      "PLTR",
+      "U",
+      "LMND",
+      "BIGC",
+      "AMD",
+      "QCOM",
+      "MU",
+      "UBER",
+    ];
+   //array.forEach((stock) => {
+   //   stockService.saveStock(stock);
+   //});
+    /*setInterval(() => {
       let array = ["HLYN", "MRNA"];
       array.forEach((stock) => {
         stockService.saveStock(stock);
       });
-    }, 3000000);
+    }, 3000000);*/
   }, []);
-  // Function to help get the loggedIn user
+
   const getLoggedInUser = (userObject) => {
     setLoggedInUser(userObject);
     console.log(userObject);
   };
-
-  // Run to check if user is authenticated
 
   return loggedInUser ? (
     <section className="App">

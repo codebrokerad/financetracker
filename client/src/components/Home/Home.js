@@ -1,6 +1,5 @@
 import React from "react";
 import "./Home.css";
-import { Link } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
 
 const Home = () => {
@@ -19,9 +18,7 @@ const Home = () => {
             <Carousel.Caption>
               <div>
                 <h3 className="carousel-header">FINANCE 2021</h3>
-                <p1 className="carousel-text">
-                  A portal to follow stock prices
-                </p1>
+                <p className="carousel-text">A portal to follow stock prices</p>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
@@ -35,10 +32,10 @@ const Home = () => {
             </div>
             <Carousel.Caption>
               <div>
-                <h3 className="carousel-header">INVEST WISER</h3>
-                <p1 className="carousel-text">
-                  Choose from top stocks to invest
-                </p1>
+                <h3 className="carousel-header">REAL TIME MARKETS</h3>
+                <p className="carousel-text">
+                  Track stocks live by creating an account
+                </p>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
@@ -52,10 +49,11 @@ const Home = () => {
             </div>
             <Carousel.Caption>
               <div>
-                <h3 className="carousel-header">REAL TIME MARKETS</h3>
-                <p1 className="carousel-text">
-                  Track stocks live by creating an account
-                </p1>
+                <h3 className="carousel-header">INVEST WISER</h3>
+                <p className="carousel-text">
+                  Create a premium account and get list of hottest stocks to
+                  invest
+                </p>
               </div>
             </Carousel.Caption>
           </Carousel.Item>

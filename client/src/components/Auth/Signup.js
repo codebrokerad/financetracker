@@ -23,14 +23,11 @@ const Signup = (props) => {
   const [regErrorMsg, setRegErrorMsg] = useState("");
 
   const service = new AuthService();
-
-  // Form submission handler
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
     const { username, password } = regForm;
 
-    // Use the service.signup method to make a call to the back end and sign the user up
     service
       .signup(username, password, premium.disabled)
       .then((response) => {
@@ -44,11 +41,9 @@ const Signup = (props) => {
       });
   };
 
-  // Change handler
   const handleChange = (event) => {
     const { name, value } = event.target;
     setRegForm({ ...regForm, [name]: value });
-    // this.premium({ checked: event.target.checked });
   };
 
   return (
@@ -76,7 +71,7 @@ const Signup = (props) => {
             onChange={onChange}
             disabled={premium.disabled}
           />
-          &nbsp; Premium User
+          &nbsp; Double Click to Activate Premium Feature
         </label>
         <input type="submit" value="Signup" />
       </form>

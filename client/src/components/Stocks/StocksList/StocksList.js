@@ -18,11 +18,11 @@ const StocksList = (props) => {
             )}
           />
           &nbsp;
-          <button className='button is-small' onClick={props.resetData}>Clear history</button>
+          <button onClick={props.resetData}>Clear history</button>
         </div>
       </div>
-      <div className='card-content'>
-        { props.areStocksLoaded() ? <p className='is-size-7 has-text-info'>Click on a stock to select/unselect</p> : null }
+      <div>
+        { props.areStocksLoaded() ? <p>Click on a stock to select or unselect</p> : null }
         <table className='table is-bordered'>
           <thead>
             <tr>

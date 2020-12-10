@@ -4,7 +4,6 @@ import { chartJsConfig, chartColors, chartDataset } from '../chartConfig/ChartCo
 
 class StocksGraph extends React.Component {
 
-  // too big a function?
   updateChart = () => {
     let chart = this.refs.chart.chartInstance;
 
@@ -26,12 +25,10 @@ class StocksGraph extends React.Component {
         let current_stock = this.props.stocks[stock_name];
         if(chart_dataset)
         {
-          // only update the data, don't create a new dataset for the graph
           chart_dataset.data = this.getStockValues(current_stock);
         }
         else
         {
-          // create a new dataset for graph
           if(current_stock)
           {
             chart.data.datasets = chart.data.datasets.concat(
@@ -46,7 +43,6 @@ class StocksGraph extends React.Component {
       {
         if(chart_dataset)
         {
-          // remove the dataset from graph
           chart.data.datasets.splice(chart.data.datasets.indexOf(chart_dataset), 1);
         }
       }
@@ -57,8 +53,6 @@ class StocksGraph extends React.Component {
   componentDidUpdate = () => {
     this.updateChart();
   }
-
-  // returns an array of objects, {t: timestamp, y: value}
   getStockValues = (stock) =>{
     return stock.history.map((history) => {
       return {t: new Date(history.time), y: history.value};
@@ -67,13 +61,11 @@ class StocksGraph extends React.Component {
 
   render() {
     return (
-      <div className={'card column'} >
-        <div className='card-header'>
-          <div className='card-header-title'>
+      <div>
+          <div>
             Graph
           </div>
-        </div>
-        <div className='card-content'>
+        <div>
           <Line
             data={{datasets: []}}
             options={chartJsConfig}

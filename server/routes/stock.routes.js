@@ -2,13 +2,23 @@ const express = require("express");
 const router = express.Router();
 const fetch = require("node-fetch");
 
-// require the stock model !!!!
 const Stock = require("../models/stock.model");
 
 const stock_api_key = process.env.STOCK_API_KEY;
 
 router.get("/saveStocks/:symbol", async (req, res) => {
   const { symbol } =req.params;
+  let query = Stock.find({}).select({ symbol: symbol });
+  let IsSavedBefore = query.exec(function (err) {
+  if (err) return next(err);
+    res.send(true);
+  });
+  if (IsSavedBefore) {
+
+
+  console.log("saved before" + symbol);  
+  } else {
+
   const fetch_response = await fetch(
     `https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${stock_api_key}`
   );
@@ -25,12 +35,13 @@ router.get("/saveStocks/:symbol", async (req, res) => {
     description: parsedJSON[0].description,
   });
 
-  // Attempt to save the new user to the database
   aNewStock.save();
   res.json(data);
+
+}
 });
 
-/* GET - retrieves all the stocks from the database */
+
 router.get("/stocks", (req, res) => {
   Stock.find()
     .then((allTheStocks) => {
@@ -39,5 +50,17 @@ router.get("/stocks", (req, res) => {
     .catch((err) => {
       res.status(500).json(err);
     });
+});
+
+router.get("/stocks/:symbol", (req, res) => {
+  const { symbol } = req.params;
+
+  let query = Stock.find({}).select({ "symbol": symbol });
+
+  query.exec(function (err, someValue) {
+      if (err) return next(err);
+      res.send(someValue);
+  });
+
 });
 module.exports = router;

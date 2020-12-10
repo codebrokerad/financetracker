@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
 import StockService from "../../services/stock-service";
 
@@ -27,30 +25,24 @@ const PremiumStocks = () => {
     setGridApi(params.api);
     setGridColumnApi(params.columnApi);
   }
-  /*if (rowData) {
-    return (
-      <div className="ag-theme-alpine" style={{ height: 4000, width: 6000 }}>
-        <AgGridReact onGridReady={onGridReady} rowData={rowData}>
-          <AgGridColumn field="name"></AgGridColumn>
-          <AgGridColumn field="symbol"></AgGridColumn>
-          <AgGridColumn field="price"></AgGridColumn>
-        </AgGridReact>
-      </div>
-    );
-  }*/
   return (
     <div>
       {rowData ? (
-        <div className="ag-theme-alpine" style={{ height: 4000, width: 6000 }}>
+        <div className="ag-theme-alpine" style={{ height: 1000, width: 1000 }}>
+        Tips of the month of December
+        1) This month semiconductor stocks are on fire. Make sure you buy stocks AMD and QCOM.
+        2) Software as a service companies are struggling and losing value each day. You may sell stocks of BIGC and DAO.
+        3) MRNA and Biontech are ready to transport their vaccines if FDA approves the emergency authorization on December 17. You can hold the stocks.
           <AgGridReact onGridReady={onGridReady} rowData={rowData.data}>
             <AgGridColumn field="name"></AgGridColumn>
             <AgGridColumn field="symbol"></AgGridColumn>
             <AgGridColumn field="price"></AgGridColumn>
+            <AgGridColumn field="range"></AgGridColumn>
           </AgGridReact>
         </div>
       ) : null}
     </div>
-  )
+  );
 };
 
 export default PremiumStocks;
