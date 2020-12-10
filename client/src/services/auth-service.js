@@ -11,19 +11,19 @@ class AuthService {
 
   signup = (username, password, premium) => {
     return this.service
-      .post("http://localhost:5001/api/signup", { username, password, premium })
+      .post("/api/signup", { username, password, premium })
       .then((response) => response.data);
   };
 
   login = (username, password) => {
     return this.service
-      .post("http://localhost:5001/api/login", { username, password })
+      .post("/api/login", { username, password })
       .then((response) => response.data);
   };
 
   isAuthenticated = () => {
     return this.service
-      .get("http://localhost:5001/api/loggedin")
+      .get("/api/loggedin")
       .then((response) => response.data);
   };
 

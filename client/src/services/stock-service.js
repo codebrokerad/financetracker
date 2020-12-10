@@ -10,13 +10,13 @@ class StockService {
 
   getStocks = () => {
     return this.service
-      .get("http://localhost:5001/api/stocks")
+      .get("/api/stocks")
       .then((response) => response);
   };
 
   saveStock = async (symbol) => {
     const response = await this.service.get(
-      `http://localhost:5001/api/saveStocks/${symbol}`
+      `/api/saveStocks/${symbol}`
     );
     return response.data;
   };
