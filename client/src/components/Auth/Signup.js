@@ -51,29 +51,28 @@ const Signup = (props) => {
     <div>
       <h2>Register</h2>
       <form onSubmit={handleFormSubmit}>
-        <label>Username:</label>
+        <label className="label">Username:</label>
         <input
+          className="input"
           type="text"
           name="username"
           value={regForm.username}
           onChange={handleChange}
         />
 
-        <label>Password:</label>
+        <label className="label">Password:</label>
         <input
+          className="input"
           type="password"
           name="password"
           value={regForm.password}
           onChange={handleChange}
         />
-        <label>
-          <Checkbox
-            onChange={onChange}
-            disabled={premium.disabled}
-          />
-
+        <label className="label">
+           CLICK TO REGISTER AS PREMIUM
+          <Checkbox onChange={onChange} disabled={premium.disabled} />
         </label>
-        <input type="submit" value="Signup" />
+        <input type="submit" value="Signup" className="login-btn" />
       </form>
       <br />
 

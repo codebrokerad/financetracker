@@ -1,4 +1,4 @@
-FINANCE 2021
+FINANCE TRACKER
 
 You can find the best stock tips and live market data in this app. 
 

@@ -61,7 +61,7 @@ const Login = (props) => {
       {loginErrorMsg && <span style={{ color: "red" }}>{loginErrorMsg}</span>}
 
       <p>
-        Welcome to Finance 2021
+        Welcome to Finance Tracker
         <Link to={"/signup"}> Signup</Link>
       </p>
     </div>

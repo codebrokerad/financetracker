@@ -17,7 +17,7 @@ const Home = () => {
             </div>
             <Carousel.Caption>
               <div>
-                <h3 className="carousel-header">FINANCE 2021</h3>
+                <h3 className="carousel-header">FINANCE TRACKER</h3>
                 <p className="carousel-text">A portal to follow stock prices</p>
               </div>
             </Carousel.Caption>
