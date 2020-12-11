@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
 import StockService from "../../services/stock-service";
-
+import "./PremiumStocks.css";
 import "ag-grid-enterprise";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
@@ -29,10 +29,20 @@ const PremiumStocks = () => {
     <div>
       {rowData ? (
         <div className="ag-theme-alpine" style={{ height: 1000, width: 1000 }}>
-        Tips of the month of December
-        1) This month semiconductor stocks are on fire. Make sure you buy stocks AMD and QCOM.
-        2) Software as a service companies are struggling and losing value each day. You may sell stocks of BIGC and DAO.
-        3) MRNA and Biontech are ready to transport their vaccines if FDA approves the emergency authorization on December 17. You can hold the stocks.
+          <h3>Tips for the month of December</h3>
+          <p className="table-p">
+            1) This month semiconductor stocks are on fire. Make sure you buy
+            stocks AMD and QCOM.
+          </p>{" "}
+          <p className="table-p">
+            2) Software as a service companies are struggling and losing value
+            each day. You may sell stocks of BIGC and DAO.
+          </p>{" "}
+          <p className="table-p">
+            3) MRNA and Biontech are ready to transport their vaccines if FDA
+            approves the emergency authorization on December 17. You can hold
+            the stocks.
+          </p>
           <AgGridReact onGridReady={onGridReady} rowData={rowData.data}>
             <AgGridColumn field="name"></AgGridColumn>
             <AgGridColumn field="symbol"></AgGridColumn>

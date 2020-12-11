@@ -32,3 +32,16 @@
   background-color: #fff;
   color: #284b63;
 }
+
+.nav-style-loggedin button{
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  color: #525151;
+  text-transform: uppercase !important;
+}
+
+
+
+
+

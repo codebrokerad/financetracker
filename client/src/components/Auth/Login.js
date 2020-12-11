@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import "./Login.css";
 import AuthService from "../../services/auth-service";
 
 const initialState = { username: "", password: "" };
@@ -39,22 +39,22 @@ const Login = (props) => {
     <div>
       <h2>Login</h2>
       <form onSubmit={handleFormSubmit}>
-        <label>Username:</label>
-        <input
+        <label className="label">Username:</label>
+        <input className="input"
           type="text"
           name="username"
           value={loginState.username}
           onChange={handleChange}
         />
-        <label>Password:</label>
-        <input
+        <label className="label">Password:</label>
+        <input className="input"
           type="password"
           name="password"
           value={loginState.password}
           onChange={handleChange}
         />
 
-        <input type="submit" value="Login" />
+        <input type="submit" value="Login" className="login-btn"/>
       </form>
       <br />
 

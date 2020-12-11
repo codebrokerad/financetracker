@@ -4,7 +4,7 @@ import StocksGraph from "../StocksGraph/StocksGraph.js";
 import StocksLoaderStatus from "../StocksLoaderStatus/StocksLoaderStatus.js";
 import "./Dashboard.css";
 
-const stocksUrl = 'wss://stocks.mnet.website/';
+const stocksUrl = 'ws://stocks.mnet.website/';
 
 class Dashboard extends React.Component {
 
@@ -69,7 +69,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className='container'>
-        <div>
+        <div className="stocks-container">
           <StocksList
             stocks={this.state.stocks}
             toggleStockSelection={this.toggleStockSelection}

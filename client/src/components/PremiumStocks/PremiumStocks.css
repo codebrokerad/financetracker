@@ -1,3 +1,10 @@
-h1, p {
-  font-family: Lato;
+.table-p {
+  font-family: 'Josefin Sans';
+  margin: 1.5rem 0;
+}
+
+h3{
+  font-family: 'Josefin Sans';
+  font-size: 2rem;
+  margin: 2rem 0;
 }

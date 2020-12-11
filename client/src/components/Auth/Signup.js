@@ -11,7 +11,6 @@ const initialState = {
 };
 
 function onChange(e) {
-  console.log("Checkbox checked:", (e.target.checked));
   premium.disabled = (e.target.checked);
 };
 
@@ -21,6 +20,8 @@ const premium = {
 const Signup = (props) => {
   const [regForm, setRegForm] = useState(initialState);
   const [regErrorMsg, setRegErrorMsg] = useState("");
+
+  React.useEffect(() => {premium.disabled = false}, []) //will be fixed
 
   const service = new AuthService();
   const handleFormSubmit = (event) => {
@@ -67,11 +68,10 @@ const Signup = (props) => {
         />
         <label>
           <Checkbox
-            defaultChecked
             onChange={onChange}
             disabled={premium.disabled}
           />
-          &nbsp; Double Click Checkbox to Activate Premium Feature
+
         </label>
         <input type="submit" value="Signup" />
       </form>

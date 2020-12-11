@@ -9,7 +9,7 @@
   text-align: center;
 font-family: 'Josefin Sans', sans-serif;
 background-color: #ebebeb;
-height: 100vh;
+height: 150vh;
 
 }
 
@@ -37,6 +37,9 @@ height: 100vh;
 
 .App-link {
   color: #61dafb;
+}
+
+.container{
 }
 
 

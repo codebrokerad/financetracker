@@ -1,0 +1,20 @@
+.label{
+    margin-right: 1rem;
+}
+
+.input{
+    margin-right: 2rem;
+}
+
+.login-btn{
+    padding: 5px 10px;
+}
+
+h2{
+    padding: 2rem 0;
+}
+
+p{
+    margin-top: 3rem;
+    font-size: 1.5rem;
+}

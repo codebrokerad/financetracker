@@ -1,3 +1,28 @@
 .container {
     background-color: white;
 }
+
+.stocks-container{
+    display:flex;
+    width: 90%;
+}
+
+.ag-root-wrapper .ag-layout-normal .ag-ltr{
+    width:800px !important;
+}
+
+canvas{
+    width: 400px !important;
+    height: 250px !important;
+}
+
+.ag-header-group-cell-label, .ag-header-cell-label{
+    justify-content: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .stocks-container{
+        flex-direction: column;
+    }
+}
+
